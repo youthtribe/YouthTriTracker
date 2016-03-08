@@ -1,4 +1,5 @@
 # Youth Tri Tracker
+[![Build Status](https://travis-ci.org/youthtribe/YouthTriTracker.svg?branch=master)](https://travis-ci.org/youthtribe/YouthTriTracker)
 
 Add a description here.
 
