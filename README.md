@@ -9,7 +9,7 @@ add instructions on getting gulp + ionic and stuff.
  - npm install
  - bower install
  - ionic serve
- - if ionic not present run this first:i
+ - if ionic not present run this first:
 
 >npm install -g cordova ionic
 
