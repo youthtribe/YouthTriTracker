@@ -1,7 +1,7 @@
 {
-  "name": "youthtribe",
-  "version": "1.1.1",
-  "description": "YouthTribe: An Ionic project",
+  "name": "youthtritracker",
+  "version": "1.0.0",
+  "description": "YouthTriTracker: A triathlon tracking app for youth.",
   "dependencies": {
     "angularfire": "^1.1.4",
     "firebase": "^2.4.1",
