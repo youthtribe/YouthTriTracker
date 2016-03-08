@@ -5,20 +5,36 @@ Add a description here.
 
 # Run locally
 
-add instructions on getting gulp + ionic and stuff.
+First, clone this repository. To do so through the command line:
 
- - npm install
- - bower install
- - ionic serve
- - if ionic not present run this first:
+```
+git clone https://github.com/youthtribe/YouthTriTracker.git
+```
 
->npm install -g cordova ionic
+To be able to run this application locally, be sure that you have cordova, ionic and gulp installed globally. To do this, run:
+
+```
+npm install -g cordova ionic gulp
+```
+
+After cloning the repository and installing the above dependencies globally, run these commands:
+
+```
+npm install
+bower install
+ionic serve
+```
+
+Ionic should start a local server and open the application in your default browser.
+
+# Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for more on how to contribute.
 
 ###TODO Notes:
 
-  - Grunt or gulp?
   - Finish readme, contributing, any other docs
-  - Get rid of bower if we can
+  - Get rid of bower if we can? Maybe it doesn't matter.
   - Testing
   - Refactoring
   - Reorg sass
