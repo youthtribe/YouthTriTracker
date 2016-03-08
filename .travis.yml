@@ -1,3 +1,4 @@
 before_script:
   - npm install -g gulp
-script: gulp
+  - npm install
+script: gulp sass
