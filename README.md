@@ -9,15 +9,16 @@ add instructions on getting gulp + ionic and stuff.
  - npm install
  - bower install
  - ionic serve
- - if ionic not present run this first:
+ - if ionic not present run this first:i
 
-`npm install -g cordova ionic`
+>npm install -g cordova ionic
 
 ###TODO Notes:
 
-Grunt or gulp?
-Finish readme, contributing, any other docs
-Get rid of bower if we can
-Testing
-Refactoring
+  - Grunt or gulp?
+  - Finish readme, contributing, any other docs
+  - Get rid of bower if we can
+  - Testing
+  - Refactoring
+  - Reorg sass
 ...
