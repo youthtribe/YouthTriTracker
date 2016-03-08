@@ -1,24 +1,11 @@
-# Youth Tri Tracker
+# GH-Pages Branch
 
-Add a description here.
+This branch is for pilot testing purposes.
 
-# Run locally
+### Pilot testing
 
-add instructions on getting gulp + ionic and stuff.
+This branch, like the youthtribe.github.io repo, is a fully in production.
 
- - npm install
- - bower install
- - ionic serve
- - if ionic not present run this first:
+You can access it at https://github.io/youthtribe/youthtribe
 
->npm install -g cordova ionic
-
-###TODO Notes:
-
-  - Grunt or gulp?
-  - Finish readme, contributing, any other docs
-  - Get rid of bower if we can
-  - Testing
-  - Refactoring
-  - Reorg sass
-...
+Any pushes to this branch should be made from "www" folder of another branch.
