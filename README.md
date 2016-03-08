@@ -6,6 +6,6 @@ This branch is for pilot testing purposes.
 
 This branch, like the youthtribe.github.io repo, is a fully in production.
 
-You can access it at https://github.io/youthtribe/youthtribetracker
+You can access it at http://youthtribe.github.io/YouthTriTracker
 
 Any pushes to this branch should be made from "www" folder of another branch.
