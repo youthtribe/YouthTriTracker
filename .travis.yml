@@ -2,4 +2,6 @@ before_script:
   - npm install -g gulp
   - npm install
   - bower install
-script: gulp sass
+script:
+  - gulp sass
+  - qunit-cli ./test/tests.js
