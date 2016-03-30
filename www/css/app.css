@@ -9731,7 +9731,7 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.panel, body, ion-content {
+.panel, body, ion-content, html {
   background-color: #EEE; }
 
 .card {
