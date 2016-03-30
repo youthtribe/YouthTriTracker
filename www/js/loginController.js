@@ -11,8 +11,11 @@ angular.module('youthTribe')
     };
 
     loginController.loginFunction = function(){
+      $(".spinner").fadeTo("slow", 1);
+
       loginController.errorMessage = null;
       fb.getRoot().authWithPassword(loginController.loginData, function(error, authData) {
+        $(".spinner").fadeOut("fast");
         if (error) {
           if (error.code == "INVALID_PASSWORD"){
             loginController.errorMessage = "Whoops! The password is not right. Please try again.";

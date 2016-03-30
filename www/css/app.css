@@ -9800,6 +9800,9 @@ body {
 .checkbox-text {
   margin-left: 15px; }
 
+.spinner {
+  opacity: 0; }
+
 .no-pad {
   padding: 0; }
 
