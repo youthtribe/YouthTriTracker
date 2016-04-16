@@ -22,6 +22,7 @@ After cloning the repository and installing the above dependencies globally, run
 ```
 npm install
 bower install
+gulp sass
 ionic serve
 ```
 
@@ -31,11 +32,9 @@ Ionic should start a local server and open the application in your default brows
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for more on how to contribute.
 
-###TODO Notes:
+### TODO Notes:
 
   - Finish readme, contributing, any other docs
-  - Get rid of bower if we can? Maybe it doesn't matter.
   - Testing
   - Refactoring
   - Reorg sass
-...
