@@ -1,6 +1,3 @@
-.no-pad {
-	padding: 0;
-}
 
 div .bg-color {
 	background-color: #EEE;
@@ -15,22 +12,28 @@ div .bg-color {
 }
 
 .youthTribe-bgred {
-  background-color: #ED2C2F; }
+  background-color: #ED2C2F;
+}
 
 .youthTribe-bgteal {
-  background-color: #51a194; }
+  background-color: #51a194;
+}
 
 .youthTribe-bgyellow {
-  background-color: #FEC62E; }
+  background-color: #FEC62E;
+}
 
- .bg-run {
-  background-color: lighten(#ED2C2F, 40%); }
+.bg-run {
+  background-color: lighten(#ED2C2F, 40%);
+}
 
 .bg-swim {
-  background-color: lighten(#51a194, 40%); }
+  background-color: lighten(#51a194, 40%);
+}
 
 .bg-bike {
-  background-color: lighten(#FEC62E, 35%); }
+  background-color: lighten(#FEC62E, 35%);
+}
 
 .mobile-row {
 	margin-left: 0;
@@ -92,6 +95,7 @@ div .bg-color {
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
+
 .has-feedback .form-control.form-control {
     padding-right: 42.5px;
 }
