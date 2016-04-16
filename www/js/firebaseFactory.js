@@ -5,7 +5,8 @@ angular.module('youthTribe').factory('firebaseFactory', [
 	'$state',
 	'$stateParams',
 	function firebaseFactory($fbArray, $fbObject, $fbAuth, $state, $stateParams) {
-		var url = "https://sweltering-fire-6401.firebaseio.com",
+		var url = "https://sweltering-fire-6401.firebaseio.com", // Test Server
+		//var url = "https://incandescent-inferno-8489.firebaseio.com", // Connor's Server
 		ref = new Firebase(url),
         auth = $fbAuth(ref);
 

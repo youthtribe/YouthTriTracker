@@ -38,3 +38,4 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more on how to contribute.
   - Testing
   - Refactoring
   - Reorg sass
+  - Determine MVP - Hopefully get something out that's "polished" by the end of the month, and add things back in as we finish them completely.
