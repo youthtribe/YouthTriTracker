@@ -9740,21 +9740,6 @@ a.button {
   padding: 1em;
   box-shadow: 0	1px	3px #888; }
 
-.youthTribe-red {
-  color: #ED2C2F; }
-
-.youthTribe-teal {
-  color: #51a194; }
-
-.youthTribe-yellow {
-  color: #FEC62E; }
-
-.margin-left-20 {
-  margin-left: 20px; }
-
-.margin-top-10 {
-  margin-top: 10px; }
-
 .profile-picture {
   max-height: 200px;
   border-radius: 999px;
@@ -9780,9 +9765,6 @@ input[type="text"], input[type="number"], input[type="date"] {
   border-radius: 4px;
   padding-left: 1em; }
 
-.google-login {
-  height: 75px; }
-
 .nav-top-links {
   color: black; }
 
@@ -9802,9 +9784,6 @@ body {
 
 .spinner {
   opacity: 0; }
-
-.no-pad {
-  padding: 0; }
 
 div .bg-color {
   background-color: #EEE; }
@@ -9902,3 +9881,12 @@ div .bg-color {
   font-size: 16px;
   z-index: 150;
   padding: 5px; }
+
+.margin-left-20 {
+  margin-left: 20px; }
+
+.margin-top-10 {
+  margin-top: 10px; }
+
+.no-pad {
+  padding: 0; }

@@ -44,13 +44,13 @@ angular.module('youthTribe')
         dashboardController.dashboard.endDate = data.endDate;
 
         var oneDay = 24*60*60*1000;
-        
+
         var lastDate = new Date(data.endDate);
         var beginDate = new Date(data.startDate);
         var currentDate = new Date();
         //set the time to midnight of the current date
         currentDate.setHours(0,0,0,0);
-        
+
         var days = Math.round(Math.abs((lastDate.getTime() - currentDate.getTime())/(oneDay)));
         var inRange = currentDate >= beginDate && currentDate <= lastDate;
 
@@ -58,7 +58,7 @@ angular.module('youthTribe')
 
         dashboardController.dashboard.daysRemaining = days;
 
-        
+
       });
 
     dashboardController.goLeaderboard = function(child) {
@@ -117,7 +117,7 @@ angular.module('youthTribe')
       try {
         return dashboardController.viewData.goals["age_" + age][type].goal;
       } catch(ex) {
-        //console.log`('Whoops! Error getting goals.');
+        // TODO: Handle
       }
     }
 

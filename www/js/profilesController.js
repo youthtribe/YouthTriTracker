@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('youthTribe')
-
   .controller('profilesController', ['$scope', '$http', 'firebaseFactory', '$state', function(profilesController, $http, fb, $state) {
 
       fb.init(profilesController.$parent);
@@ -9,6 +8,7 @@ angular.module('youthTribe')
       profilesController.children = fb.getChildrenData();
 
       profilesController.imageCheckboxHandler = function(imgNum) {
+        // TODO: Classify
         $(".avatar-input").val(imgNum);
         $("#avatar-1").css("border", "");
         $("#avatar-2").css("border", "");
@@ -16,9 +16,9 @@ angular.module('youthTribe')
         $("#avatar-4").css("border", "");
         $("#avatar-" + imgNum).css("border", "5px solid black");
         profilesController.newChild.avatar = imgNum;
-      }
+      };
 
-      profilesController.createChild = function(){
+      profilesController.createChild = function() {
         $(".profiles-input").each(function() {
           if($(this).val() == "") {
             $(this).closest(".form-group").addClass("has-error has-feedback");
@@ -28,10 +28,10 @@ angular.module('youthTribe')
         });
 
 
-        if(!$(".newChildClass").find(".has-error").length){
-          console.log(profilesController.newChild);
+        if (!$(".newChildClass").find(".has-error").length) {
           var firebaseUserChildren = fb.getChildren();
 			    profilesController.newChild.dateOfBirth = profilesController.newChild.dateOfBirth.toLocaleDateString("en-US");
+
           var newChild = firebaseUserChildren.push(profilesController.newChild),
               newChildKey = newChild.key();
 
@@ -42,8 +42,7 @@ angular.module('youthTribe')
         }
       };
 
-      profilesController.chooseChild = function(child){
+      profilesController.chooseChild = function(child) {
         $state.go("dashboard.id", {id: child.uniqueKey});
       };
-
   }]);
