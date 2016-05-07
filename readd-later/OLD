@@ -24,3 +24,7 @@
   controller: 'legalController',
   templateUrl: 'views/legal.html'
 })
+
+/** INDEX **/
+<!--<li role="presentation"></li>-->
+<!--<li role="presentation"><a href="#/leaderboard/{{$stateParams.id}}"><span class="nav-top-links"><i class="fa fa-list-ol fa-2x"></i></span></a></li>-->
