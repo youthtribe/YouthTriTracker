@@ -1,0 +1,48 @@
+{
+  "env": {
+    "browser": 1
+  },
+  "globals": {
+    "$": true
+  },
+  "rules": {
+    "comma-dangle": 2,
+    "no-constant-condition": 2,
+    "no-irregular-whitespace": 2,
+    "no-unreachable": 2,
+    "use-isnan": 2,
+    "no-alert": 1,
+    "no-fallthrough": 1,
+    "no-multi-spaces": 2,
+    "no-redeclare": 2,
+    "no-self-assign": 2,
+    "no-use-before-define": 2,
+    "no-unused-vars": 1,
+    "no-delete-var": 2,
+    "brace-style": 2,
+    "comma-spacing": 2,
+    "camelcase": 2,
+    "indent": [2, "tab"],
+    "key-spacing": 2,
+    "keyword-spacing": 2,
+    "newline-after-var": 2,
+    "newline-before-return": 2,
+    "no-inline-comments": 1,
+    "no-lonely-if": 2,
+    "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
+    "no-multiple-empty-lines": 1,
+    "no-nested-ternary": 2,
+    "no-spaced-func": 2,
+    "no-trailing-spaces": 2,
+    "no-whitespace-before-property": 2,
+    "object-curly-spacing": 2,
+    "one-var": 2,
+    "quote-props": 2,
+    "semi": 2,
+    "semi-spacing": 2,
+    "space-before-blocks": 2,
+    "eqeqeq": 1,
+    "quotes": 2
+  },
+  "plugins": []
+}
