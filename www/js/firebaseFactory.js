@@ -5,15 +5,16 @@ angular.module("youthTribe").factory("firebaseFactory", [
 	"$state",
 	"$stateParams",
 	function firebaseFactory($fbArray, $fbObject, $fbAuth, $state, $stateParams) {
-		var url = "https://sweltering-fire-6401.firebaseio.com", // Test Server
+		// Test Server
+		var url = "https://sweltering-fire-6401.firebaseio.com",
 		//var url = "https://incandescent-inferno-8489.firebaseio.com", // Connor"s Server
 			ref = new Firebase(url),
-        																														auth = $fbAuth(ref);
+			auth = $fbAuth(ref);
 
 		return {
-			object: $fbObject,
-			array: $fbArray,
-			init: function($scope) {
+			"object": $fbObject,
+			"array": $fbArray,
+			"init": function($scope) {
 
 				if (!$state.includes("login")) {
 					if (!!auth.$getAuth()) {
@@ -22,23 +23,22 @@ angular.module("youthTribe").factory("firebaseFactory", [
 
 						} else {
 							var user = $fbObject(new Firebase(url + "/users/" + $stateParams.uid));
+
 							if (user.firstName) {
 								$state.go("profiles");
 							} else {
 								$state.go("login");
 							}
 						}
-					} else {
-						if (!$state.includes("register") && !$state.includes("login")) {
-							$state.go("login");
-						}
+					} else if (!$state.includes("register") && !$state.includes("login")) {
+						$state.go("login");
 					}
 				}
 
 				$scope.navLogout = function() {
 					$stateParams.uid = null;
-				    										auth.$unauth();
-				    										$state.go("login");
+					auth.$unauth();
+					$state.go("login");
 				};
 
 				$scope.navLogin = function() {
@@ -46,11 +46,11 @@ angular.module("youthTribe").factory("firebaseFactory", [
 				};
 
 				$scope.navFaq = function() {
-					$state.go("faq.id", {id: $stateParams.id});
+					$state.go("faq.id", {"id": $stateParams.id});
 				};
 
 				$scope.navLegal = function() {
-					$state.go("legal.id", {id: $stateParams.id});
+					$state.go("legal.id", {"id": $stateParams.id});
 				};
 
 				$scope.navProfiles = function() {
@@ -58,99 +58,98 @@ angular.module("youthTribe").factory("firebaseFactory", [
 				};
 
 				$scope.navDashboard = function() {
-					$state.go("dashboard.id", {id: $stateParams.id});
+					$state.go("dashboard.id", {"id": $stateParams.id});
 				};
 
 				$scope.navProfile = function() {
-					$state.go("profile.id", {id: $stateParams.id});
+					$state.go("profile.id", {"id": $stateParams.id});
 				};
 
 				$scope.navRewards = function() {
-					$state.go("rewards.id", {id: $stateParams.id});
+					$state.go("rewards.id", {"id": $stateParams.id});
 				};
 
 				$scope.navActivity = function() {
-					$state.go("activity.id", {id: $stateParams.id});
+					$state.go("activity.id", {"id": $stateParams.id});
 				};
 				$scope.navLeaderboard = function() {
-					$state.go("leaderboard.id", {id: $stateParams.id});
+					$state.go("leaderboard.id", {"id": $stateParams.id});
 				};
 			},
 			//returns boolean indicating whether user is logged in
-			isLoggedIn: function() {
+			"isLoggedIn": function() {
 				return !!auth.$getAuth();
 			},
-			auth: auth,
-			getProfile: function() {
+			"auth": auth,
+			"getProfile": function() {
 				return $fbObject(new Firebase(url + "/users/" + auth.$getAuth().uid + "/children/" + $stateParams.id));
 			},
-			getChildren: function() {
+			"getChildren": function() {
 				return new Firebase(url + "/users/" + auth.$getAuth().uid + "/children");
 			},
-			getChildrenData: function() {
+			"getChildrenData": function() {
 				return $fbObject(new Firebase(url + "/users/" + auth.$getAuth().uid + "/children"));
 			},
-			getAuth: auth.$getAuth,
-			getUser: function() {
+			"getAuth": auth.$getAuth,
+			"getUser": function() {
 				var id = this.user();
 
 				return $fbObject(id);
 			},
-			user: function() {
+			"user": function() {
 				return this.newUser(auth.$getAuth().uid);
 			},
-			newUser: function (uid) {
+			"newUser": function (uid) {
 				return new Firebase(url + "/users/" + uid);
 			},
-			getView: function() {
+			"getView": function() {
 				return new Firebase(url + "/view");
 			},
-			getGoalsForAgeData: function(age) {
+			"getGoalsForAgeData": function(age) {
 				return $fbObject(new Firebase(url + "/view/goals/age_" + age));
 			},
-			getViewData: function() {
+			"getViewData": function() {
 				return $fbObject(this.getView());
 			},
-			getProfileMedalsFirebase: function() {
+			"getProfileMedalsFirebase": function() {
 				return new Firebase(url + "/users/" + auth.$getAuth().uid + "/children/" + $stateParams.id + "/medals");
 			},
-			getProfileManualMedalsFirebase: function() {
+			"getProfileManualMedalsFirebase": function() {
 				return new Firebase(url + "/users/" + auth.$getAuth().uid + "/children/" + $stateParams.id + "/manualMedal");
 			},
-			getProfileFirebase: function() {
+			"getProfileFirebase": function() {
 				return new Firebase(url + "/users/" + auth.$getAuth().uid + "/children/" + $stateParams.id);
 			},
-			getProfileData: function() {
+			"getProfileData": function() {
 				return $fbObject(this.getProfileFirebase());
 			},
-			getFirebaseActivities: function() {
+			"getFirebaseActivities": function() {
 				return $fbObject(this.getActivities());
 			},
-			getActivities: function() {
+			"getActivities": function() {
 				return new Firebase(url + "/users/" + auth.$getAuth().uid + "/children/" + $stateParams.id +"/activities");
 			},
-			getRoot: function() {
+			"getRoot": function() {
 				return new Firebase(url);
 			},
-			getRewards: function() {
+			"getRewards": function() {
 				return $fbObject(this.getRewardsRef());
 			},
-			getRewardsRef: function() {
+			"getRewardsRef": function() {
 				return new Firebase(url + "/view/rewards");
 			},
-			getLeaderboardForUser: function(username) {
+			"getLeaderboardForUser": function(username) {
 				return $fbObject(this.getLeaderboardRefForUser(username));
 			},
-			getLeaderboardRefForUser: function(username) {
+			"getLeaderboardRefForUser": function(username) {
 				return new Firebase(url + "/view/leaderboard/" + username);
 			},
-			getRestrictDates: function() {
+			"getRestrictDates": function() {
 				return $fbObject(this.getRestrictDatesFirebase());
 			},
-			getRestrictDatesFirebase: function() {
+			"getRestrictDatesFirebase": function() {
 				return new Firebase(url + "/view/restrictDates");
 			}
 		};
 	}
-
 ]);
