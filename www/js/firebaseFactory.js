@@ -1,71 +1,71 @@
-angular.module('youthTribe').factory('firebaseFactory', [
-	'$firebaseArray',
-	'$firebaseObject',
-	'$firebaseAuth',
-	'$state',
-	'$stateParams',
+angular.module("youthTribe").factory("firebaseFactory", [
+	"$firebaseArray",
+	"$firebaseObject",
+	"$firebaseAuth",
+	"$state",
+	"$stateParams",
 	function firebaseFactory($fbArray, $fbObject, $fbAuth, $state, $stateParams) {
 		var url = "https://sweltering-fire-6401.firebaseio.com", // Test Server
-		//var url = "https://incandescent-inferno-8489.firebaseio.com", // Connor's Server
-		ref = new Firebase(url),
-        auth = $fbAuth(ref);
+		//var url = "https://incandescent-inferno-8489.firebaseio.com", // Connor"s Server
+			ref = new Firebase(url),
+        																														auth = $fbAuth(ref);
 
 		return {
 			object: $fbObject,
 			array: $fbArray,
-			init: function($scope){
+			init: function($scope) {
 
-				if(!$state.includes("login")){
-					if(!!auth.$getAuth()){
+				if (!$state.includes("login")) {
+					if (!!auth.$getAuth()) {
 						$stateParams.uid = auth.$getAuth().uid;
-						if($stateParams.id || $state.includes("login") || $state.includes("register") || $state.includes("profiles")){
+						if ($stateParams.id || $state.includes("login") || $state.includes("register") || $state.includes("profiles")) {
 
-						}else{
+						} else {
 							var user = $fbObject(new Firebase(url + "/users/" + $stateParams.uid));
-							if(user.firstName){
+							if (user.firstName) {
 								$state.go("profiles");
-							}else{
+							} else {
 								$state.go("login");
 							}
 						}
-					}else{
-						if(!$state.includes("register") && !$state.includes("login")){
+					} else {
+						if (!$state.includes("register") && !$state.includes("login")) {
 							$state.go("login");
 						}
 					}
 				}
 
-				$scope.navLogout = function(){
+				$scope.navLogout = function() {
 					$stateParams.uid = null;
-				    auth.$unauth();
-				    $state.go("login");
+				    										auth.$unauth();
+				    										$state.go("login");
 				};
 
-				$scope.navLogin = function(){
+				$scope.navLogin = function() {
 					$state.go("login");
 				};
 
-				$scope.navFaq = function(){
+				$scope.navFaq = function() {
 					$state.go("faq.id", {id: $stateParams.id});
 				};
 
-				$scope.navLegal = function(){
+				$scope.navLegal = function() {
 					$state.go("legal.id", {id: $stateParams.id});
 				};
 
-				$scope.navProfiles = function(){
+				$scope.navProfiles = function() {
 					$state.go("profiles");
 				};
 
-				$scope.navDashboard = function(){
+				$scope.navDashboard = function() {
 					$state.go("dashboard.id", {id: $stateParams.id});
 				};
 
-				$scope.navProfile = function(){
+				$scope.navProfile = function() {
 					$state.go("profile.id", {id: $stateParams.id});
 				};
 
-				$scope.navRewards = function(){
+				$scope.navRewards = function() {
 					$state.go("rewards.id", {id: $stateParams.id});
 				};
 
@@ -78,14 +78,14 @@ angular.module('youthTribe').factory('firebaseFactory', [
 			},
 			//returns boolean indicating whether user is logged in
 			isLoggedIn: function() {
-				return !!auth.$getAuth()
+				return !!auth.$getAuth();
 			},
 			auth: auth,
 			getProfile: function() {
-				return $fbObject(new Firebase(url + "/users/" + auth.$getAuth().uid + "/children/" + $stateParams.id))
+				return $fbObject(new Firebase(url + "/users/" + auth.$getAuth().uid + "/children/" + $stateParams.id));
 			},
 			getChildren: function() {
-				return new Firebase(url + "/users/" + auth.$getAuth().uid + "/children")
+				return new Firebase(url + "/users/" + auth.$getAuth().uid + "/children");
 			},
 			getChildrenData: function() {
 				return $fbObject(new Firebase(url + "/users/" + auth.$getAuth().uid + "/children"));
@@ -129,19 +129,19 @@ angular.module('youthTribe').factory('firebaseFactory', [
 			getActivities: function() {
 				return new Firebase(url + "/users/" + auth.$getAuth().uid + "/children/" + $stateParams.id +"/activities");
 			},
-			getRoot: function(){
+			getRoot: function() {
 				return new Firebase(url);
 			},
-			getRewards: function(){
+			getRewards: function() {
 				return $fbObject(this.getRewardsRef());
 			},
-			getRewardsRef: function(){
+			getRewardsRef: function() {
 				return new Firebase(url + "/view/rewards");
 			},
-			getLeaderboardForUser: function(username){
+			getLeaderboardForUser: function(username) {
 				return $fbObject(this.getLeaderboardRefForUser(username));
 			},
-			getLeaderboardRefForUser: function(username){
+			getLeaderboardRefForUser: function(username) {
 				return new Firebase(url + "/view/leaderboard/" + username);
 			},
 			getRestrictDates: function() {
@@ -150,7 +150,7 @@ angular.module('youthTribe').factory('firebaseFactory', [
 			getRestrictDatesFirebase: function() {
 				return new Firebase(url + "/view/restrictDates");
 			}
-		}
+		};
 	}
 
-])
+]);
