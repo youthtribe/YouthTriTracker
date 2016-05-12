@@ -34,7 +34,6 @@
     <script src="js/app.js"></script>
     <script src="js/firebaseFactory.js"></script>
     <script src="js/faqController.js"></script>
-    <script src="js/legalController.js"></script>
     <script src="js/profileController.js"></script>
     <script src="js/loginController.js"></script>
     <script src="js/rewardsController.js"></script>
@@ -42,8 +41,6 @@
     <script src="js/registerController.js"></script>
     <script src="js/profilesController.js"></script>
     <script src="js/activityController.js"></script>
-    <script src="js/adminController.js"></script>
-    <script src="js/leaderboardController.js"></script>
     <script src="js/routes.js"></script>
   </head>
   <body ng-app="youthTribe" ng-cloak>
@@ -81,7 +78,7 @@
         </br />
         <footer class="footer" ng-hide="(['register', 'profiles', 'login']).indexOf($state.current.name) > -1">
           <div class="container text-center">
-            <p class="text-muted" ng-if="$stateParams.uid" ><a href="#" ng-click="navLogout();">Log Out</a> | <a href="#" ng-click="navProfiles();">Change Profile</a> | <a href="#" ng-click="navLegal();">Legal Information</a> | <a href="#/faq/{{$stateParams.id}}">FAQ</a></p>
+            <p class="text-muted" ng-if="$stateParams.uid" ><a href="#" ng-click="navLogout();">Log Out</a> | <a href="#" ng-click="navProfiles();">Change Profile</a> | <a href="#/faq/{{$stateParams.id}}">FAQ</a></p>
           </div>
         </footer>
       </ion-content>

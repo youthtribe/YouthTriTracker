@@ -2,4 +2,5 @@
 require("require-dir")("./gulp");
 var gulp = require("gulp");
 
-gulp.task("default", ["eslint", "sass", "watch"]);
+gulp.task("default", ["browserify"]);
+//gulp.task("default", ["eslint", "sass", "watch"]);

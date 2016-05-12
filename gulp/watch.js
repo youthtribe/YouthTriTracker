@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./src/scss/**/*.scss']
 };
 
 gulp.task('watch', function() {
