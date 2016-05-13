@@ -46,24 +46,14 @@
         <div class="navbar-displacement" ng-hide="(['register', 'profiles', 'login']).indexOf($state.current.name) > -1"></div>
         <div ui-view>
           <h1>Logging In....</h1>
-
         </div>
         <div class="helpText" hidden>
           <ul>
-            <li>
-                $state = {{$state.current.name}}
-            </li>
-            <li>
-                $stateParams = {{$stateParams}}
-            </li>
-            <li>
-                $state full url = {{$state.$current.url.source}}
-            </li>
-            <li>
-              {{text}}
-            </li>
+            <li>$state = {{$state.current.name}}</li>
+            <li>$stateParams = {{$stateParams}}</li>
+            <li>$state full url = {{$state.$current.url.source}}</li>
+            <li>{{text}}</li>
           </ul>
-
         </div>
         </br />
         <footer class="footer" ng-hide="(['register', 'profiles', 'login']).indexOf($state.current.name) > -1">
@@ -75,6 +65,5 @@
     </ion-pane>
 
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
-    </body>
-    <!-- Bootstrap Toggle -->
+	</body>
 </html>
