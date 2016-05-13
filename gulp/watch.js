@@ -8,6 +8,6 @@ var paths = {
 
 gulp.task("watch", function() {
   gulp.watch(paths.sass, ["sass"]);
-	gulp.watch(paths.js, ["browserify"]);
+	gulp.watch(paths.js, ["eslint", "browserify"]);
 	gulp.watch(paths.html, ["copy:views", "copy:index"]);
 });

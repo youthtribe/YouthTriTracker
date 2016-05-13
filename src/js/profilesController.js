@@ -5,15 +5,13 @@ angular.module("youthTribe")
 		fb.init(profilesController.$parent);
 
 		profilesController.children = fb.getChildrenData();
+		profilesController.newChild = {};
+		profilesController.addChild = false;
 
 		profilesController.imageCheckboxHandler = function(imgNum) {
-			// TODO: Classify
 			$(".avatar-input").val(imgNum);
-			$("#avatar-1").css("border", "");
-			$("#avatar-2").css("border", "");
-			$("#avatar-3").css("border", "");
-			$("#avatar-4").css("border", "");
-			$("#avatar-" + imgNum).css("border", "5px solid black");
+			$(".avatar-selection").css("border", "");
+			$("#avatar-" + imgNum + ".avatar-selection").css("border", "5px solid black");
 			profilesController.newChild.avatar = imgNum;
 		};
 

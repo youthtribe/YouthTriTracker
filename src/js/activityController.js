@@ -1,4 +1,4 @@
-"use strict";
+import {findAge} from "./converters";
 
 angular.module("youthTribe")
 	.controller("activityController", ["$scope", "$http", "firebaseFactory", function($activityController, $http, fb) {
@@ -10,24 +10,8 @@ angular.module("youthTribe")
 		};
 		$activityController.profile = fb.getProfile();
 
-		$activityController.findAge = function() {
-			var birthday = +new Date($activityController.profile.dateOfBirth),
-				year = (new Date(Date.now())).getYear() + 1900,
-				age;
-
-			age = ~~((new Date("12/31/" + year) - birthday) / (31557600000));
-
-			if (age > 12) {
-				age = 12;
-			} else if (age < 5) {
-				age = 5;
-			}
-
-			return age;
-		};
-
 		$activityController.addActivity = function() {
-			var age = $activityController.findAge(),
+			var age = findAge(+new Date($activityController.profile.dateOfBirth)),
 				usernameLeaderboard;
 
 			$activityController.activity.date = $activityController.activity.date.toLocaleDateString("en-US");
@@ -154,9 +138,9 @@ angular.module("youthTribe")
 
 		$("#lengthOrDistance").change(function() {
 			if ($("#lengthOrDistance").prop("checked")) {
-				$activityController.convertDistanceToTime($activityController.findAge(), $activityController.activity.type, $activityController.activity.length);
+				$activityController.convertDistanceToTime(findAge(+new Date($activityController.profile.dateOfBirth)), $activityController.activity.type, $activityController.activity.length);
 			} else {
-				$activityController.convertTimeToDistance($activityController.findAge(), $activityController.activity.type, $activityController.activity.length);
+				$activityController.convertTimeToDistance(findAge(+new Date($activityController.profile.dateOfBirth)), $activityController.activity.type, $activityController.activity.length);
 			}
 			$activityController.$apply();
 		});

@@ -1,4 +1,4 @@
-"use strict";
+import {findAge} from "./converters";
 
 angular.module("youthTribe")
 	.controller("dashboardController", ["$scope", "$http", "firebaseFactory", "$state", function(dashboardController, $http, fb, $state) {
@@ -25,7 +25,7 @@ angular.module("youthTribe")
 						fb.getProfile().$loaded()
 							.then(function(profileData) {
 								dashboardController.profile = profileData;
-								dashboardController.dashboard.age = dashboardController.findAge();
+								dashboardController.dashboard.age = findAge(+new Date(dashboardController.profile.dateOfBirth));
 
 								dashboardController.viewData = viewData;
 								dashboardController.dashboard.username = viewData.leaderboard.username;
@@ -65,22 +65,6 @@ angular.module("youthTribe")
 
 		dashboardController.goProfiles = function() {
 			$state.go("profiles");
-		};
-
-		dashboardController.findAge = function() {
-			var birthday = +new Date(dashboardController.profile.dateOfBirth),
-				year = (new Date(Date.now())).getYear() + 1900,
-				age;
-
-			age = ~~((new Date("12/31/" + year) - birthday) / (31557600000));
-
-			if (age > 12) {
-				age = 12;
-			} else if (age < 5) {
-				age = 5;
-			}
-
-			return age;
 		};
 
 		dashboardController.sumActivities = function() {
