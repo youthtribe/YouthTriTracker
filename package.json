@@ -26,6 +26,7 @@
     "gulp-util": "^3.0.7",
     "qunit-cli": "^0.2.0",
     "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5",
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [

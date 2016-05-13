@@ -16,6 +16,6 @@ gulp.task("browserify", function () {
 			file.contents = browserify(file.path, {debug: true}).transform(babelify, {presets: ["es2015", "stage-0"]}).bundle();
 		}))
 		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(gulp.dest("./www"));
+		//.pipe(uglify())
+		.pipe(gulp.dest("./www/js"));
 });
