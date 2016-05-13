@@ -9,16 +9,6 @@ angular.module("youthTribeRoutes", [
 			"controller": "loginController",
 			"templateUrl": "views/login.html"
 		})
-		.state("faq", {
-			"url": "/faq",
-			"controller": "faqController",
-			"templateUrl": "views/faq.html"
-		})
-		.state("faq.id", {
-			"url": "/:id",
-			"controller": "faqController",
-			"templateUrl": "views/faq.html"
-		})
 		.state("register", {
 			"url": "/register",
 			"controller": "registerController",

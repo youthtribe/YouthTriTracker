@@ -11,3 +11,7 @@ gulp.task("build", ["browserify", "sass", "copy"]);
 gulp.task("default", function() {
 	runSequence("clean:www", "eslint", "build");
 });
+
+gulp.task("dev", function() {
+	runSequence("default", "watch");
+});

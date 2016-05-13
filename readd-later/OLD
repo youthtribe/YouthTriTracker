@@ -24,6 +24,16 @@
   controller: 'legalController',
   templateUrl: 'views/legal.html'
 })
+.state("faq", {
+	"url": "/faq",
+	"controller": "faqController",
+	"templateUrl": "views/faq.html"
+})
+.state("faq.id", {
+	"url": "/:id",
+	"controller": "faqController",
+	"templateUrl": "views/faq.html"
+})
 
 /** INDEX **/
 <!--<li role="presentation"></li>-->
@@ -31,4 +41,10 @@
 <script src="js/adminController.js"></script>
 <script src="js/leaderboardController.js"></script>
 <script src="js/legalController.js"></script>
-<a href="#" ng-click="navLegal();">Legal Information</a> | 
+<a href="#" ng-click="navLegal();">Legal Information</a> |
+
+/** PROFILE **/
+<!--
+<a class="twitter-timeline" href="https://twitter.com/YouthTribe_Tri" data-widget-id="706219551764025344">Tweets by @YouthTribe_Tri</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+-->

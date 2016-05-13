@@ -1,7 +1,6 @@
 import "./main-module";
 import "./activityController";
 import "./dashboardController";
-import "./faqController";
 import "./firebaseFactory";
 import "./loginController";
 import "./profileController";

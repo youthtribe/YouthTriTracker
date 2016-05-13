@@ -24,7 +24,7 @@ angular.module("youthTribe")
 
 				if ($(this).val() === "") {
 					$(this).closest(".form-group").addClass("has-error has-feedback");
-					registerController.errorMessage = "Please fill out every box";
+					registerController.errorMessage = "Please fill out all of the required fields.";
 				}
 			});
 

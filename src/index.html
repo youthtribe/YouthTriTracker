@@ -11,8 +11,8 @@
     <link href="lib/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
     <link href="css/app.css" rel="stylesheet">
-    <link rel="icon" sizes="128x128" href="apple-touch-icon-128.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" sizes="128x128" href="img/logos/apple-touch-icon-128.png">
+    <link rel="apple-touch-icon" href="img/logos/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -35,7 +35,7 @@
   </head>
   <body ng-app="youthTribe" ng-cloak>
     <ul ng-hide="(['register', 'profiles', 'login']).indexOf($state.current.name) > -1" class="nav nav-tabs navbar navbar-default navbar-fixed-top" style="background-color:white; margin-bottom:15px">
-      <li role="presentation"><img src="img/youth_tribe_logo.png" alt="Run" height="40"></li>
+      <li role="presentation"><img src="img/youth_tribe_logo.png" height="45"></li>
       <li role="presentation"><a href="#/dashboard/{{$stateParams.id}}"><span class="nav-top-links"><i class="fa fa-home fa-2x"></i></span></a></li>
       <li role="presentation"><a href="#/profile/{{$stateParams.id}}"><span class="nav-top-links"><i class="fa fa-user fa-2x"></i></span></a></li>
       <li role="presentation"><a href="#/rewards/{{$stateParams.id}}"><span class="nav-top-links"><i class="fa fa-trophy fa-2x"></i></span></a></li>
@@ -43,7 +43,7 @@
     <ion-pane>
       <ion-content>
         <!-- If we're on the login, register or select profile view, don't show the navbar -->
-        <div class="navbar-displacement" style="margin-top:55px" ng-hide="(['register', 'profiles', 'login']).indexOf($state.current.name) > -1"></div>
+        <div class="navbar-displacement" ng-hide="(['register', 'profiles', 'login']).indexOf($state.current.name) > -1"></div>
         <div ui-view>
           <h1>Logging In....</h1>
 

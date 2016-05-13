@@ -2,6 +2,15 @@
   display: none !important;
 }
 
+// For anchors with ng-click and no href attribute
+a:hover {
+	cursor: pointer;
+}
+
+.navbar-displacement {
+	margin-top: 55px;
+}
+
 .panel, body, ion-content, html {
 	background-color: #EEE;
 }
@@ -69,4 +78,123 @@ body {
 
 .spinner {
 	opacity: 0;
+}
+
+
+div .bg-color {
+	background-color: #EEE;
+}
+
+.panel-body {
+	margin: 0;
+}
+
+.tri-borders {
+	border-radius: 0;
+}
+
+.youthTribe-bgred {
+  background-color: #ED2C2F;
+}
+
+.youthTribe-bgteal {
+  background-color: #51a194;
+}
+
+.youthTribe-bgyellow {
+  background-color: #FEC62E;
+}
+
+.bg-run {
+  background-color: lighten(#ED2C2F, 40%);
+}
+
+.bg-swim {
+  background-color: lighten(#51a194, 40%);
+}
+
+.bg-bike {
+  background-color: lighten(#FEC62E, 35%);
+}
+
+.mobile-row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.background-white {
+	background-color: white;
+}
+
+.header-top {
+	margin-top: 5px;
+}
+
+.tiny-image {
+	max-height: 20px;
+}
+
+.form-group .help-block {
+	display: none;
+}
+
+.form-group.has-error .help-block {
+	display: block;
+}
+
+.form-group label {
+	font-weight: 700
+}
+
+.form-control.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.has-error .form-control.form-control {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.has-feedback .form-control.form-control {
+    padding-right: 42.5px;
+}
+
+.img-hover-desc {
+    background-color: rgba(212, 212, 212, 0.9);
+    border: solid 2px #7D7D7D;
+    display: block;
+    position: fixed;
+    width: 50%;
+    height: 200px;
+    top: 25%;
+    left: 25%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px black;
+    color: #020202;
+    font-size: 16px;
+    z-index: 150;
+    padding: 5px;
 }
